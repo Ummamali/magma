@@ -6,6 +6,7 @@
 :root {
   --transition-dur: 180ms;
   --primary-blue: #0382d1;
+  --animation-duration: 500ms;
 }
 
 /* reset */
@@ -253,6 +254,7 @@ body {
   margin-top: 10px;
 }
 
+/* Below is all the style for interface js */
 /* some builtin keyframes rules */
 @keyframes append-yourself {
   /* This keyframe is DOMContainer default keyframe for append items */
@@ -265,6 +267,13 @@ body {
     transform: scale(1, 1);
   }
 }
+.append {
+  /* class to be applied */
+  animation-name: append-yourself;
+  animation-duration: var(--animation-duration);
+  animation-fill-mode: forwards;
+  animation-play-state: paused;
+}
 
 @keyframes remove-yourself {
   /* This keyframe is DOMContainer default for removing items */
@@ -276,4 +285,84 @@ body {
     opacity: 0;
     transform: scale(0, 0);
   }
+}
+.remove {
+  /* class to be applied */
+  animation-name: remove-yourself;
+  animation-duration: var(--animation-duration);
+  animation-fill-mode: forwards;
+  animation-play-state: paused;
+}
+
+/* when the animation is running */
+.running {
+  animation-play-state: running !important;
+}
+
+/* Tehese are animations for frontcards */
+@keyframes come-down {
+  0% {
+    transform: translateY(-130%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+.come-down {
+  /* class to be applied */
+  animation-name: come-down;
+  animation-duration: var(--animation-duration);
+  animation-fill-mode: forwards;
+  animation-play-state: paused;
+}
+
+@keyframes come-up {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(-130%);
+  }
+}
+.come-up {
+  /* class to be applied */
+  animation-name: come-up;
+  animation-duration: var(--animation-duration);
+  animation-fill-mode: forwards;
+  animation-play-state: paused;
+}
+
+/* the frontcard container */
+#fcard-contain {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  padding: 0px 15px;
+  z-index: -1;
+  background: #00000000;
+  transition-property: background, z-index;
+  transition-duration: var(--animation-duration);
+}
+#fcard-contain.opened {
+  background: #000000be;
+  z-index: 1;
+}
+#fcard-contain .fcard {
+  background: #ffffff;
+  max-width: 780px;
+  margin: 50px auto 0px auto;
+  padding: 30px;
+  position: relative;
+}
+#fcard-contain .fcard .close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 20px;
+  color: #222222;
+}
+#fcard-contain .fcard .close:hover {
+  cursor: pointer;
 }
