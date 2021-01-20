@@ -225,7 +225,8 @@ body {
   padding: 10px 0px;
 }
 .form-group input[type="text"],
-.form-group input[type="number"] {
+.form-group input[type="number"],
+.form-group input[type="password"] {
   display: block;
   background: none;
   border: 1px solid #aaaaaa;
@@ -238,7 +239,8 @@ body {
   transition-duration: var(--transition-dur);
 }
 .form-group input[type="text"]:focus,
-.form-group input[type="number"]:focus {
+.form-group input[type="number"]:focus,
+.form-group input[type="password"]:focus {
   outline: none;
   border-color: #444444;
 }
