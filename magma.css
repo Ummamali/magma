@@ -193,6 +193,11 @@ body {
   display: flex;
   flex-direction: row;
 }
+.frow-dis {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 .fcol {
   display: flex;
   flex-direction: column;
